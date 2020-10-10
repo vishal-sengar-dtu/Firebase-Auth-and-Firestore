@@ -119,6 +119,27 @@
     </ul>
   </div>
 
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyD0IWhWX5j59XY1kf0p67fxUt74af5S2dc",
+      authDomain: "fir-tutorial-8519a.firebaseapp.com",
+      databaseURL: "https://fir-tutorial-8519a.firebaseio.com",
+      projectId: "fir-tutorial-8519a",
+      storageBucket: "fir-tutorial-8519a.appspot.com",
+      messagingSenderId: "647606352063",
+      appId: "1:647606352063:web:a865dbf14fd08170276e0a"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./auth.js"></script>
