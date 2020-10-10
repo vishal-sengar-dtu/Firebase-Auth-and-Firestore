@@ -12,11 +12,21 @@ signupForm.addEventListener("submit", (e) => {
   //sign up the user
   auth.createUserWithEmailAndPassword(email, password)
     .then(cred => {
-      console.log(cred.user);
 
       // clear input fields and close modal 
       const modal = document.querySelector("#modal-signup")
       M.Modal.getInstance(modal).close();
       signupForm.reset();
   });
+})
+
+//logout
+const logout = document.querySelector("#logout")
+logout.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  //logging out user
+  auth.signOut().then(() => {
+    alert("user signed out")
+  })
 })
