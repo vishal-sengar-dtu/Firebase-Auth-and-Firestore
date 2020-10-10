@@ -4,7 +4,9 @@ auth.onAuthStateChanged(user => {
     db.collection("guides").onSnapshot(snapshot => {
       setupGuides(snapshot.docs);
       setupUI(user);
-    });
+    }).catch((err) => {
+      alert(err.message);
+    })
   } else {
     setupGuides([]);
     setupUI();
@@ -26,7 +28,7 @@ createForm.addEventListener("submit", (e) => {
     M.Modal.getInstance(modal).close();
     createForm.reset();
   }).catch((err) => {
-    console.log(err.message);
+    alert(err.message);
   })
 })
 
@@ -47,7 +49,9 @@ signupForm.addEventListener("submit", (e) => {
       const modal = document.querySelector("#modal-signup")
       M.Modal.getInstance(modal).close();
       signupForm.reset();
-  });
+    }).catch((err) => {
+      alert(err.message);
+  })
 })
 
 
@@ -78,5 +82,7 @@ loginForm.addEventListener("submit", (e) => {
       const modal = document.querySelector("#modal-login")
       M.Modal.getInstance(modal).close();
       loginForm.reset();
-    });
+    }).catch((err) => {
+      alert(err.message);
+  })
 })
